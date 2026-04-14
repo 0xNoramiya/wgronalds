@@ -1656,8 +1656,8 @@ function renderShare() {
     const link = document.getElementById('shareLink');
     link.onclick = () => {
       const txt = STATE.currentRule >= 47
-        ? "I actually completed the WgRonalds application. They still filled the position. wgronalds.game"
-        : `I made it to rule ${STATE.currentRule}/47 on my WgRonalds application. They still won't hire me. wgronalds.game`;
+        ? "I actually completed the WgRonalds application. They still filled the position. wgronalds.vercel.app"
+        : `I made it to rule ${STATE.currentRule}/47 on my WgRonalds application. They still won't hire me. wgronalds.vercel.app`;
       try { navigator.clipboard.writeText(txt); link.textContent = 'Copied to clipboard!'; setTimeout(()=>{link.textContent='Share your progress';}, 1800); }
       catch(e) { prompt('Copy your progress:', txt); }
     };
@@ -2519,7 +2519,7 @@ const VIBE_JAM_EXIT_URL = 'https://vibej.am/portal/2026';
 
 function selfRef() {
   // Prefer pure host for ?ref (shorter, clean). Fall back to origin+path.
-  const host = window.location.hostname || 'wgronalds.game';
+  const host = window.location.hostname || 'wgronalds.vercel.app';
   const path = window.location.pathname === '/' ? '' : window.location.pathname;
   return host + path;
 }
